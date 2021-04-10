@@ -1,5 +1,5 @@
 # kobohr-api-toolkit
-R scripts to download and upload data to [KOBO Humanitarian using the API](https://kobo.humanitarianresponse.info/") 
+R scripts to download and upload data to [KOBO Humanitarian](https://kobo.humanitarianresponse.info/") using the API
 
 Three processes are defined:
 
