@@ -44,11 +44,11 @@ kobohr_create_export <- function(){
   
   if(result$status_code == 200 | result$status_code == 201){
     
-    print(paste0("Success! ","status code:",result$status_code))
+    cat(paste0("Success! ","status code:",result$status_code,"\n"))
     
   }else{
     
-    print("*** Report generation failed ***")
+    cat("*** Report generation failed ***\n")
   }
   
   
@@ -108,15 +108,17 @@ kobohr_list_exports <- function(){
 }
 
 
-# Function to download file 
+# Function to download file -----------------------------------------------
 
 download_report <- function(filename, path){
   
-  MAX_POLL_ATTEMPTS =1000    # <---------- Increase the poll if the file takes too long to download
+  MAX_POLL_ATTEMPTS =3000
+  
+  attempts = 0
   
   if (!exists("report_key")) {
     
-    print("Error:Missing report key!")
+    cat("Error:Missing report key!\n")
     
   }else{
     
@@ -128,29 +130,26 @@ download_report <- function(filename, path){
       
       latest_url<<-d_list_url$result
       
-      attempts = 0
-      
       if(attempts > MAX_POLL_ATTEMPTS){
         
-        print("Error:Timed out trying to fetch report, try setting a higher MAX_PULL_ATTEMPTS!")
+        cat("Error:Timed out trying to fetch report, try setting a higher MAX_PULL_ATTEMPTS!\n")
         
         break
-      
-      }else if(is.na(latest_url)){
         
-        attempts = attempts + 1 
-        
-        print(paste("attempting to download ",filename," to ",path, ",attempt", attempts))
-        
-        
-        
-      }else{
+      }else if(!is.na(d_list_url$processing_time_seconds > 0)){
         
         downloadFile(url = latest_url, filename = filename,  path = path,skip = FALSE, overwrite = TRUE, username= u, password = pw)
         
-        print(paste0("Successfully downloaded ", filename, " to ", path, " at ", now()))
+        cat(paste0("Successfully downloaded ", filename, " to ", path, " at ", now(),"\n"))
         
         break
+        
+      }else{
+        
+        attempts = attempts + 1 
+        
+        cat(paste("attempting to download ",filename," to ",path, ",attempt", attempts,"\n"))
+        
       }
       
     }
