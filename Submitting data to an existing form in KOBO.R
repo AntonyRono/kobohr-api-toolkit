@@ -1,4 +1,4 @@
-#Title:Submitting data to an existing form in KOBO
+#Title:Submitting New data to an existing form in KOBO
 #Author: Antony Rono
 #Date: 31-May-2021
 
@@ -17,13 +17,12 @@ library(readxl)
 
 # You can find the field names by downloading the form structure from KOBO, either as XML or XLS
 
-# Please see the two excel files in the same directory as an example: "Form structure" is the from structure downloaded from KOBO, and "Upload data" is the data we'd like to push
+# Please see the two excel files in the same directory as an example: "Form structure" is the form structure downloaded from KOBO, and "Upload data" is the data we'd like to push
 
 
 # INPUTS --------------------------------------------------
 
 u <-  "username"        # <---------- input your username
-
 pw <-"password"  # <---------- input your password
 
 
@@ -33,7 +32,6 @@ kobo_server_url<-"https://kobo.humanitarianresponse.info/"
 asset_uid = "awrt9VTU5pvS4MdBYuqCFo"                       # <---------- Input the form id(s). This can be found on the url of the form
 
 url<-paste0(kc_server_url,"api/v1/submissions")            # <---------- Creating the API: Base Url + Endpoint
-
 
 
 # Function to push data ---------------------------------------------------------
