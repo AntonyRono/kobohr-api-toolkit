@@ -15,6 +15,8 @@ Three processes are defined:
       1. The type of export ("csv", "geojson", "xls" or "spss_labels")
     * See [Export Task List](https://kobo.humanitarianresponse.info/exports/) for full list
 
-1. Submitting data to a specific form in KOBO
+1. Submitting new data to a specific form in KOBO
 
-This toolkit only includes functions to perform the most basic tasks (i.e download and export data), but you can refer to [kobohr_apitoolbox](https://github.com/ppsapkota/kobohr_apitoolbox) for additional functions
+1. [Updating Records on KOBO](https://github.com/AntonyRono/tidytuesday/blob/main/Updating Records on KOBO.R)
+
+This toolkit only includes functions to perform the most basic tasks (i.e download, export,create,update data), but you can refer to [kobohr_apitoolbox](https://github.com/ppsapkota/kobohr_apitoolbox) for additional functions
