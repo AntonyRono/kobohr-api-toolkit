@@ -17,6 +17,6 @@ Three processes are defined:
 
 1. Submitting new data to a specific form in KOBO
 
-1. [Updating Records on KOBO](https://github.com/AntonyRono/kobohr-api-toolkit/blob/main/Updating Records on KOBO.R)
+1. [Updating Records on KOBO](https://github.com/AntonyRono/kobohr-api-toolkit/blob/main/Updating%20Records%20on%20KOBO.R)
 
 This toolkit only includes functions to perform the most basic tasks (i.e download, export,create,update data), but you can refer to [kobohr_apitoolbox](https://github.com/ppsapkota/kobohr_apitoolbox) for additional functions
